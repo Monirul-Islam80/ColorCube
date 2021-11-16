@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Monirul Islam Soumik">
+    <link rel="stylesheet" href="style.css">
+    <title>colorCube</title>
+
+</head>
+
+<body>
+    <div class="button">
+        <button class="b1" onclick='red("ec0000" , "ff0000" )'>red</button>
+        <button class="b2" onclick="red('008eec','0099ff')">blue</button>
+        <button class="b3" onclick="red('00ec00','00ff00')">green</button>
+    </div>
+    <div class="cube">
+        <div class="top"><span class="before"></span></div>
+        <div>
+            <span class="span1" style="--i:1;"></span>
+            <span class="span2" style="--i:2;"></span>
+            <span class="span3" style="--i:0;"></span>
+            <span class="span4" style="--i:3;"></span>
+        </div>
+    </div>
+
+    <script>
+
+        let span1 = document.querySelector(".span1");
+        let span2 = document.querySelector(".span2");
+        let span3 = document.querySelector(".span3");
+        let span4 = document.querySelector(".span4");
+        let tops = document.querySelector(".before");
+        let val = "";
+        let val2 = "";
+        const red = (val, val2) => {
+            const colors = `linear-gradient(#151515, #${val})`;
+            const colors2 = `#${val2}`;
+            const shadow = ` 0 0 120px ${colors2}33,
+                             0 0 200px ${colors2}66,
+                             0 0 300px ${colors2}99,
+                             0 0 400px ${colors2}cc,
+                             0 0 500px ${colors2}`;
+
+
+            span1.style.background = colors;
+            span2.style.background = colors;
+            span3.style.background = colors;
+            span4.style.background = colors;
+            tops.style.background = colors2;
+            tops.style.boxShadow  =shadow;
+
+}
+        console.log(val)
+    </script>
+</body>
+
+</html>
